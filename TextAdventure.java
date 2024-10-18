@@ -26,7 +26,7 @@ public class TextAdventure
     input = inScanner.nextLine();
 
     // Change ourHero's name
-    // ADD CODE HERE
+    ourHero.changeName(input);
     
     // describe the starting situation. Feel free to change this
     System.out.println("You wake up to find yourself on the edge of a shadowy forest with the sun nearly set. \nYou see what looks like a city in the distance. \nWhat would you like to do? \ncity: go towards the city\nforest: turn around and re-enter the forest\nnap: go back to sleep\n" + ourHero.getName() + ": ");
