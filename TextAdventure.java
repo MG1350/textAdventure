@@ -125,35 +125,42 @@ public class TextAdventure
     
   }
 
-  private void nap()
-  {
-    // change image
-    console.setImage("pumpkintrio.jpg");
-
-    // describe the area/situation to the user. 
-    // Give them options for choices.
-    // ADD CODE HERE
-
-    // Take action or go to another zone based on their choice
-    // ADD CODE HERE
-    
-  }
-
   private void city()
   {
     // change image
-    // ADD CODE HERE
+    console.setImage("pumpkintrio.png");
 
     // describe the area/situation to the user. 
     // Give them options for choices.
-    // ADD CODE HERE
-
+    System.out.println("You enter the city.");
+    System.out.println("You encounter dangerous pumpkins.");
+    System.out.println("They try to attack you.");
+    System.out.println("Do you fight back? \nyes: You fight back\nno: You run away\n" + ourHero.getName() + ": ");
+    String input = inScanner.nextLine();
+    if(ourHero.getMonstersDefeated() > 0 && input.compareTo("no") == 0)
+    {
+      System.out.println("You escape running with the newfound strength from your previous battles.");
+      System.out.println("You realize how dangerous the world is and decide to stop exploring.");
+      System.out.println("You settle in a shack you found while running.");
+      gameEnd();
+    } else if(ourHero.getMonstersDefeated() > 0 && input.compareTo("yes") == 0 )
+    {
+      System.out.println("You easily defeat the pumpkins with the skills you learned from previous battles.");
+      System.out.println("You find 5.0 gold on one of the pumpkins");
+      ourHero.setGold(5.0);
+      System.out.println("You also find a map telling you how to escape.");
+      gameEnd();
+    } else
+    {
+      System.out.println("The pumpkins easily overpower you due to your inexperience.");
+      gameEnd();
+    }
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
     
   }
 
-  private void treasure()
+  private void nap()
   {
     // change image
     // ADD CODE HERE
@@ -167,7 +174,21 @@ public class TextAdventure
     
   }
 
-  private void enterZone6()
+  private void mountains()
+  {
+    // change image
+    // ADD CODE HERE
+
+    // describe the area/situation to the user. 
+    // Give them options for choices.
+    // ADD CODE HERE
+
+    // Take action or go to another zone based on their choice
+    // ADD CODE HERE
+    
+  }
+
+  private void ocean()
   {
     // change image
     // ADD CODE HERE
