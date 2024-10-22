@@ -23,11 +23,14 @@ public class TextAdventure
     ourHero.changeName(input);
     System.out.println("You wake up to find yourself in the middle of a forest. \nYou see what looks like a city in the distance. \nWhat would you like to do? \ncity: Go towards the city\nnap: Go back to sleep\n" + ourHero.getName() + ": ");
     input = inScanner.nextLine();
-    if (input.equals("city")) {
+    if (input.equals("city")) 
+    {
       animals();
-    } else if (input.equals("nap")) {
+    } else if (input.equals("nap")) 
+    {
       nap();
-    } else {
+    } else 
+    {
       System.out.println("Invalid input! Please choose again.");
       play();
     }
@@ -44,31 +47,41 @@ public class TextAdventure
     String input = inScanner.nextLine();
     double chance = Math.random();
 
-    if (input.equals("fight")) {
-      if(chance>0.2){
+    if (input.equals("fight")) 
+    {
+      if(chance>0.2)
+      {
         ourHero.defeatMonster();
         System.out.println("It was a close fight but you defeat the animals. \nDo you continue towards the city? \nyes: Go towards the city\nno: Follow your steps back to the forest\n" + ourHero.getName() + ": ");
         input = inScanner.nextLine();
-        if (input.equals("yes")) {
+        if (input.equals("yes")) 
+        {
           city();
-        } else if (input.equals("no")) {
+        } else if (input.equals("no")) 
+        {
           forest();
         }
-      } else {
+      } else 
+      {
         System.out.println("You perish in battle.");
         gameEnd();
       }
     }
-    else if (input.equals("run")) {
-      if(chance>0.2){
+    else if (input.equals("run")) 
+    {
+      if(chance>0.2)
+      {
         System.out.println("You narrow escape the enraged animals. \nDo you continue towards the city? \nyes: Go towards the city\nno: Follow your steps back to the forest\n" + ourHero.getName() + ": ");
         input = inScanner.nextLine();
-        if (input.equals("yes")) {
+        if (input.equals("yes")) 
+        {
           city();
-        } else if (input.equals("no")) {
+        } else if (input.equals("no")) 
+        {
           forest();
         }
-      } else {
+      } else 
+      {
         System.out.println("The animals caught up, you perish.");
         gameEnd();
       }
@@ -125,6 +138,7 @@ public class TextAdventure
       System.out.println("You easily defeat the pumpkins with the skills you learned from previous battles.");
       System.out.println("You find 5.0 gold on one of the pumpkins");
       ourHero.setGold(5.0);
+      ourHero.defeatMonster();
       System.out.println("You also find a map telling you how to escape.");
       gameEnd();
     } else
