@@ -220,14 +220,24 @@ public class TextAdventure
     System.out.println("A sea monster attacks the ship at sea.");
     System.out.println("Do you help fight the monster? \nyes: You get on the cannon and shoot the monster\nno: You cower in fear\n" + ourHero.getName() + ": ");
     String input = inScanner.nextLine();
+    double chance = 0.1;
+    boolean unlucky = chance < 0.2;
     if(input.compareTo("yes") == 0)
     {
-      System.out.println("You barely defeat the sea monster with your crew.");
-      System.out.println("You are awarded 15.0 gold for your bravery and help.");
-      ourHero.setGold(15.0);
-      ourHero.defeatMonster();
-      System.out.println("You decide to stay on the ship with your newfound crew.");
-      gameEnd();
+      if(!unlucky)
+      {
+        System.out.println("You barely defeat the sea monster with your crew.");
+        System.out.println("You are awarded 15.0 gold for your bravery and help.");
+        ourHero.setGold(15.0);
+        ourHero.defeatMonster();
+        System.out.println("You decide to stay on the ship with your newfound crew.");
+        gameEnd();
+      } else 
+      {
+        System.out.println("Despite your help, the ship is defeated");
+        System.out.println("As you slowly sink, you are glad you at least found some friends before the end.");
+        gameEnd();
+      }
     } else if(input.compareTo("no") == 0)
     {
       System.out.println("Your ship is capsized by the monster");
