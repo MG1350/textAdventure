@@ -163,12 +163,21 @@ public class TextAdventure
   private void nap()
   {
     // change image
-    // ADD CODE HERE
+    console.setImage("graveyard.jpg");
 
     // describe the area/situation to the user. 
     // Give them options for choices.
-    // ADD CODE HERE
-
+    System.out.println("You awake in a graveyard in your dreams.");
+    System.out.println("You notice mountains and an ocean in the distance.");
+    System.out.println("Where do you explore? \nmountains: You journey to the mountains\nocean: You go towards the ocean\n" + ourHero.getName() + ": ");
+    String input = inScanner.nextLine();
+    if(input.compareTo("mountains") == 0)
+    {
+      mountains();
+    } else if(input.compareTo("ocean") == 0)
+    {
+      ocean();
+    }
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
     
@@ -178,11 +187,26 @@ public class TextAdventure
   {
     // change image
     // ADD CODE HERE
-
-    // describe the area/situation to the user. 
-    // Give them options for choices.
-    // ADD CODE HERE
-
+    console.setImage("mountains.png");
+    System.out.println("You encounter another traveler.");
+    System.out.println("They tell you to travel with them to be safer");
+    System.out.println("Do you follow them? \nyes: You travel together\nno: You continue on your own\n" + ourHero.getName() + ": ");
+    String input = inScanner.nextLine();
+    if(input.compareTo("yes") == 0)
+    {
+      System.out.println("You encounter a bear.");
+      System.out.println("You easily overpower the bear with your new found friend.");
+      System.out.println("You find 10.0 gold on the bear and split it.");
+      ourHero.setGold(5.0);
+      ourHero.defeatMonster();
+      System.out.println("You arrive at the mountains and settle in a village");
+      gameEnd();
+    } else if(input.compareTo("no") == 0)
+    {
+      System.out.println("You encounter a bear.");
+      System.out.println("You regret going alone.");
+      gameEnd();
+    }
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
     
@@ -190,13 +214,26 @@ public class TextAdventure
 
   private void ocean()
   {
-    // change image
-    // ADD CODE HERE
-
-    // describe the area/situation to the user. 
-    // Give them options for choices.
-    // ADD CODE HERE
-
+    console.setImage("ocean.jpg");
+    System.out.println("You arrive at the ocean and see a ship.");
+    System.out.println("You join the crew.");
+    System.out.println("A sea monster attacks the ship at sea.");
+    System.out.println("Do you help fight the monster? \nyes: You get on the cannon and shoot the monster\nno: You cower in fear\n" + ourHero.getName() + ": ");
+    String input = inScanner.nextLine();
+    if(input.compareTo("yes") == 0)
+    {
+      System.out.println("You barely defeat the sea monster with your crew.");
+      System.out.println("You are awarded 15.0 gold for your bravery and help.");
+      ourHero.setGold(15.0);
+      ourHero.defeatMonster();
+      System.out.println("You decide to stay on the ship with your newfound crew.");
+      gameEnd();
+    } else if(input.compareTo("no") == 0)
+    {
+      System.out.println("Your ship is capsized by the monster");
+      System.out.println("You regret not being brave enough to help.");
+      gameEnd();
+    }
     // Take action or go to another zone based on their choice
     // ADD CODE HERE
     
@@ -204,7 +241,6 @@ public class TextAdventure
 
   private void gameEnd()
   {
-    console.setImage("forest.jpg");
     System.out.println("You adventure comes to an end.");
     System.out.println("You defeated " + ourHero.getMonstersDefeated() + " monsters, and earned " + ourHero.getGold() + " gold.\n");
     inScanner.close();
