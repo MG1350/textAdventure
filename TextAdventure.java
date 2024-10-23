@@ -120,7 +120,7 @@ public class TextAdventure
 
   private void city()
   {
-    console.setImage("pumpkintrio.png");
+    console.setImage("pumpkin.png");
     System.out.println("You enter the city.");
     System.out.println("You encounter dangerous pumpkins.");
     System.out.println("They try to attack you.");
@@ -167,7 +167,7 @@ public class TextAdventure
 
   private void mountains()
   {
-    console.setImage("mountains.png");
+    console.setImage("mountains.jpg");
     System.out.println("You encounter another traveler.");
     System.out.println("They tell you to travel with them to be safer");
     System.out.println("Do you follow them? \nyes: You travel together\nno: You continue on your own\n" + ourHero.getName() + ": ");
