@@ -1,5 +1,7 @@
 import java.util.*;
 
+import javax.lang.model.util.ElementScanner6;
+
 public class TextAdventure 
 {
   FancyConsole console;
@@ -60,6 +62,10 @@ public class TextAdventure
         } else if (input.equals("no")) 
         {
           forest();
+        } else 
+        {
+          System.out.println("Not an option, please choose again");
+          animals();
         }
       } else 
       {
@@ -79,13 +85,21 @@ public class TextAdventure
         } else if (input.equals("no")) 
         {
           forest();
+        } else 
+        {
+          System.out.println("Not an option, please choose again");
+          animals();
         }
       } else 
       {
         System.out.println("The animals caught up, you perish.");
         gameEnd();
       }
-    } 
+    } else 
+    {
+      System.out.println("Not an option, please choose again");
+      animals();
+    }
     
   }
 
@@ -162,6 +176,10 @@ public class TextAdventure
     } else if(input.compareTo("ocean") == 0)
     {
       ocean();
+    } else 
+    {
+      System.out.println("Not an option, please choose again");
+      nap();
     }
   }
 
@@ -187,6 +205,10 @@ public class TextAdventure
       System.out.println("You encounter a bear.");
       System.out.println("You regret going alone.");
       gameEnd();
+    } else 
+    {
+      System.out.println("Not an option, please choose again");
+      mountains();
     }
   }
 
@@ -222,6 +244,10 @@ public class TextAdventure
       System.out.println("Your ship is capsized by the monster");
       System.out.println("You regret not being brave enough to help.");
       gameEnd();
+    } else 
+    {
+      System.out.println("Not an option, please choose again");
+      ocean();
     }
   }
 
